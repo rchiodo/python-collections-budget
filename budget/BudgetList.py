@@ -30,7 +30,7 @@ class BudgetList:
     def __next__(self):
         try:
             return self.iter_e.__next__()
-        except:
+        except StopIteration as stop:
             return self.iter_o.__next__()
 
     def __len__(self):
@@ -55,10 +55,8 @@ def main():
     labels = ["Expenses", "Overages", "Budget"]
     values = [myBudgetList.sum_expenses, myBudgetList.sum_overages, myBudgetList.budget]
     ax.bar(labels, values, color=['green', 'red', 'blue'])
-    ax.set_title('Your total expenses vs total budget')
-
-    if "INSIDE_KERNEL" not in globals():
-        plt.show()
+    ax.set_title('Your total expenses vs. total budget')
+    plt.show()
 
 
 #%%
