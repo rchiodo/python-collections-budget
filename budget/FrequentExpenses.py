@@ -1,6 +1,11 @@
 #%%
 import collections
-from .import Expense
+
+if 'INSIDE_KERNEL' in globals():
+    import Expense
+else:
+    from .import Expense
+
 import os
 import matplotlib.pyplot as plt
 
