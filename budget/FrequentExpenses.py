@@ -1,12 +1,12 @@
 #%%
 import collections
-import Expense
+from .import Expense
 import os
 import matplotlib.pyplot as plt
 
 dir = os.path.dirname(__file__)
 expenses = Expense.Expenses()
-expenses.read_expenses(f"{dir}/../data/spending_data.csv")
+expenses.read_expenses(f"data/spending_data.csv")
 
 # %%
 spending_categories = []
